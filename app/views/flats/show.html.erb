@@ -1,17 +1,30 @@
-<% if @flat.picture_url.present? %>
-  <img src="<%= @flat.picture_url %>" alt="<%= @flat.name %>" class="w-100" style="height: 30vh; object-fit: cover;">
-<% end %>
+<div class="position-relative">
+  <% if @flat.picture_url.present? %>
+    <img src="<%= @flat.picture_url %>" alt="<%= @flat.name %>" class="w-100" style="height: 40vh; object-fit: cover;">
+  <% else %>
+    <div class="bg-secondary d-flex align-items-center justify-content-center w-100" style="height: 40vh;">
+      <i class="fa-solid fa-image fa-5x text-white"></i>
+    </div>
+  <% end %>
+  <div class="position-absolute" style="bottom: -30px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 800px;">
+    <div class="bg-light p-4 rounded shadow">
+      <h1 class="mb-2"><%= @flat.name %></h1>
+      <p class="mb-0"><%= @flat.address %></p>
+    </div>
+  </div>
+</div>
 
-<h1><%= @flat.name %></h1>
-<p>
-  <%= @flat.address %>
-</p>
+<div class="container" style="max-width: 800px; margin-top: 50px;">
+  <div class="mb-4">
+    <h2>A bit more about this flat ...</h2>
+    <p><%= @flat.description %></p>
+  </div>
 
-<h2>A bit more about this flat ...</h2>
-<p>
-  <%= @flat.description %>
-</p>
+  <div class="mb-4">
+    <div class="d-flex gap-4">
+      <span><i class="fa-solid fa-users"></i> <%= @flat.number_of_guests %> guests</span>
+      <span><i class="fa-solid fa-dollar-sign"></i> <%= @flat.price_per_night %> per night</span>
+    </div>
+  </div>
 
-<h2>Details</h2>
-<i class="fa-solid fa-users"></i><%= @flat.number_of_guests %>
-<i class="fa-solid fa-dollar-sign"></i><%= @flat.price_per_night %>
+</div>

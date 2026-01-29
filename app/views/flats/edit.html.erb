@@ -1,6 +1,14 @@
-<h1>Editing Flat</h1>
+<div class="container" style="max-width: 600px;">
+  <div class="mt-4 mb-4">
+    <h1>Editing Flat</h1>
+  </div>
 
-<%= render 'form', submit_text: "Update Flat" %>
-<br>
+  <div class="bg-light p-4 rounded mb-3">
+    <%= render 'form'%>
+    <div class="d-flex gap-3 mt-3">
+      <%= button_tag "Update Flat", type: "submit", form: @flat.persisted? ? "edit_flat_#{@flat.id}" : "new_flat", class: "btn btn-primary" %>
+      <%= link_to "Cancel", flats_path, class: "btn btn-danger" %>
+    </div>
+  </div>
 
-<%= link_to "Cancel", flats_path %>
+</div>

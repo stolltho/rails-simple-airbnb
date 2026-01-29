@@ -1,24 +1,35 @@
-# README
+# Simple Airbnb
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple Rails application for managing flat rentals, inspired by Airbnb. Users can browse available flats, view detailed information, and manage listings.
 
-Things you may want to cover:
+## Features
 
-* Ruby version
+- Browse all available flats with photos and key details
+- Search functionality to filter flats
+- View detailed information about each flat
+- Add, edit, and remove flat listings
+- Responsive design with Bootstrap styling
 
-* System dependencies
+## Tech Stack
 
-* Configuration
+- Ruby on Rails
+- SQLite database
+- Bootstrap 5 for styling
+- Font Awesome icons
+- Simple Form for form generation
 
-* Database creation
+## Getting Started
 
-* Database initialization
+```bash
+# Install dependencies
+bundle install
 
-* How to run the test suite
+# Setup database
+rails db:migrate
+rails db:seed
 
-* Services (job queues, cache servers, search engines, etc.)
+# Start the server
+rails server
+```
 
-* Deployment instructions
-
-* ...
+Visit `http://localhost:3000` to view the application.
