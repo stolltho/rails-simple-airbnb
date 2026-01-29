@@ -1,4 +1,7 @@
-<%= simple_form_for :search, url: flats_path, method: :get, html: { class: "d-flex me-3" } do |f| %>
-  <%= f.input :query, input_html: { value: params.dig(:search, :query), class: "form-control me-2" }, label: false, placeholder: "Search flats..." %>
-  <%= f.submit "Search", class: "btn btn-outline-success mb-3 ms-2" %>
+<%= simple_form_for :search, url: flats_path, method: :get, html: { class: "d-flex align-items-center" } do |f| %>
+  <%= f.input_field :query,
+      value: params.dig(:search, :query),
+      class: "form-control",
+      placeholder: "Search flats..." %>
+  <%= f.submit "Search", class: "btn btn-outline-success ms-2" %>
 <% end %>
