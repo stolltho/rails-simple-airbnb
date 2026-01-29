@@ -2,7 +2,12 @@ class FlatsController < ApplicationController
   before_action :set_flat, only: %i[show edit update destroy]
 
   def index
-    @flats = Flat.all
+    query = params.dig(:search, :query)
+    if query.present?
+      @flats = Flat.where("name LIKE ? OR address LIKE ?", "%#{query}%", "%#{query}%")
+    else
+      @flats = Flat.all
+    end
   end
 
   def show
