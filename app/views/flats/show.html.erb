@@ -1,4 +1,11 @@
+<% if @flat.picture_url.present? %>
+  <img src="<%= @flat.picture_url %>" alt="<%= @flat.name %>" class="w-100" style="height: 30vh; object-fit: cover;">
+<% end %>
+
 <h1><%= @flat.name %></h1>
+<p>
+  <%= @flat.address %>
+</p>
 
 <h2>A bit more about this flat ...</h2>
 <p>
